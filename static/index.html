@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FlashLearn AI</title>
+    <link rel="stylesheet" href="/static/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <h1>⚡ FlashLearn AI</h1>
+        <p>Your personal AI-powered learning assistant</p>
+    </header>
+
+    <main>
+        <div class="container">
+            <!-- Subjects Section -->
+            <div id="subjects-container" class="card">
+                <h2>My Subjects</h2>
+                <div id="subject-tiles" class="tiles-container"></div>
+            </div>
+
+            <!-- Content Display Section -->
+            <div id="content-container" class="hidden">
+                <h2 id="current-subject-title"></h2>
+                <div class="card result-card">
+                    <h3>Summary</h3>
+                    <div id="summary-content"></div>
+                </div>
+                <div class="card result-card">
+                    <h3>Flashcards</h3>
+                    <div id="flashcards-content" class="tiles-container"></div>
+                </div>
+                <div class="card result-card">
+                    <h3>Quiz</h3>
+                    <div id="quiz-content"></div>
+                </div>
+                <div class="card result-card" id="qa-container">
+                    <h3>Ask a Question</h3>
+                    <form id="qa-form">
+                        <input type="text" id="qa-input" placeholder="Ask anything about this subject...">
+                        <button type="submit">Ask</button>
+                    </form>
+                    <div id="qa-response" class="hidden"></div>
+                </div>
+            </div>
+
+            <!-- Upload Section -->
+            <div class="card input-card">
+                <h2>Add a New Subject</h2>
+                <form id="upload-form">
+                    <input type="text" id="subject-input" name="subject" placeholder="Enter a new subject name..." required>
+                    <div class="tab-container">
+                        <button type="button" class="tab-link active" onclick="showTab('file')">Upload File</button>
+                        <button type="button" class="tab-link" onclick="showTab('youtube')">YouTube Link</button>
+                    </div>
+                    <div id="file-tab" class="tab-content active">
+                        <p>Upload a PDF or TXT file.</p>
+                        <input type="file" id="file-input" name="file" accept=".pdf,.txt">
+                    </div>
+                    <div id="youtube-tab" class="tab-content">
+                        <p>Enter a public YouTube video URL.</p>
+                        <input type="text" id="youtube-url" name="youtube_url" placeholder="https://www.youtube.com/watch?v=...">
+                    </div>
+                    <button type="submit" id="submit-button">Generate & Save</button>
+                </form>
+            </div>
+
+            <!-- Global States -->
+            <div id="loading-spinner" class="hidden">
+                <div class="spinner"></div>
+                <p>Processing your content... this may take a moment.</p>
+            </div>
+            <div id="error-message" class="hidden card error-card"></div>
+        </div>
+    </main>
+
+    <footer>
+        <p>Built with Gemini</p>
+    </footer>
+
+    <script src="/static/script.js"></script>
+</body>
+</html>
