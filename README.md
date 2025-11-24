@@ -1,5 +1,7 @@
 # FlashLearn AI
 
+![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
+
 FlashLearn AI is a web application that helps you study and learn more effectively. It uses AI to automatically generate a summary, flashcards, and quizzes from your study materials. You can upload PDF or text files, or provide a YouTube URL, and FlashLearn AI will create a personalized study guide for you.
 
 ## Features
